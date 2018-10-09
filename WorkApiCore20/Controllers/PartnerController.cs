@@ -15,10 +15,10 @@ namespace WorkApiCore20.Controllers
         {
             db = context;
         }
-        [HttpPost]
-        public IActionResult Post([FromBody]PartnerModel partner)
-        {
+        //[HttpPost]
+        //public IActionResult Post([FromBody]PartnerModel partner)
+        //{
 
-        }
+        //}
     }
 }

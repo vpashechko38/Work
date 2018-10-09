@@ -12930,11 +12930,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vpash\\source\\repos\\WorkApiCore20\\WorkApiCore20\\WorkApiCore20.csproj",
+      "projectUniqueName": "C:\\GitHub\\Work\\WorkApiCore20\\WorkApiCore20.csproj",
       "projectName": "WorkApiCore20",
-      "projectPath": "C:\\Users\\vpash\\source\\repos\\WorkApiCore20\\WorkApiCore20\\WorkApiCore20.csproj",
+      "projectPath": "C:\\GitHub\\Work\\WorkApiCore20\\WorkApiCore20.csproj",
       "packagesPath": "C:\\Users\\vpash\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vpash\\source\\repos\\WorkApiCore20\\WorkApiCore20\\obj\\",
+      "outputPath": "C:\\GitHub\\Work\\WorkApiCore20\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -141,7 +141,7 @@ namespace WorkApiCore20.Controllers
                 db.Users.Add(user);
                 db.SaveChanges();
                 SendMail.SendToken(db.Users.FirstOrDefault(x=>x.Password==user.Password).Id,user.Email, password);
-                return Ok(new { success = true, message = user });
+                return Ok("success");
             }
             catch (Exception e)
             {
@@ -164,7 +164,11 @@ namespace WorkApiCore20.Controllers
                 }
                 if (Crypt.GeneratePassword(user.Email, user.Password) != client.Password)
                 {
-                    return Ok("Логин или пароль не найдет");
+                    return Ok("Логин или пароль введены не правильно");
+                }
+                if (client.Success==false)
+                {
+                    return Ok("Ваша учетная запись не подтверждена");
                 }
                 LicenseModel license = db.Licenses.FirstOrDefault(x => x.UserId == client.Id);
                 if (license.LifeTime > DateTime.Today)
@@ -172,7 +176,54 @@ namespace WorkApiCore20.Controllers
                     return Ok("Ваша лицензия истекла");
                 } 
                 db.SaveChanges();
-                return Ok("success");
+                if (client.INN == null)
+                {
+                    return Ok(client.Id);
+                }
+                switch (client.TypeClient)
+                {
+                    case (int)TypeClient.Individual:
+                        return Ok(new
+                        {
+                            client.Id,
+                            client.TypeClient,
+                            client.INN,
+                            client.OGRNIP,
+                            client.LegalAddress,
+                            client.ActualAddress,
+                            client.PhoneNumber,
+                            client.CheckingAccount,
+                            client.BankName,
+                            client.BIK,
+                            client.CorrespondentAccount,
+                            client.Fio,
+                            client.SeriesAndNumberCertificate,
+                            client.DateOfIssueCertificate
+                        });
+                    case (int)TypeClient.UristFace:
+                        return Ok(new
+                        {
+                            client.Id,
+                            client.TypeClient,
+                            client.INN,
+                            client.OGRN,
+                            client.KPP,
+                            client.LegalAddress,
+                            client.ActualAddress,
+                            client.PhoneNumber,
+                            client.Email,
+                            client.CheckingAccount,
+                            client.BankName,
+                            client.BIK,
+                            client.CorrespondentAccount,
+                            client.Fio,
+                            client.Position,
+                            client.ActingBasis
+                        });
+
+                    default:
+                        return Ok("");
+                }
             }
             catch (Exception e)
             {
