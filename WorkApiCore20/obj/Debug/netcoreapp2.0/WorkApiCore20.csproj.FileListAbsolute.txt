@@ -1,0 +1,11 @@
+C:\Users\vpash\source\repos\WorkApiCore20\WorkApiCore20\bin\Debug\netcoreapp2.0\WorkApiCore20.deps.json
+C:\Users\vpash\source\repos\WorkApiCore20\WorkApiCore20\bin\Debug\netcoreapp2.0\WorkApiCore20.runtimeconfig.json
+C:\Users\vpash\source\repos\WorkApiCore20\WorkApiCore20\bin\Debug\netcoreapp2.0\WorkApiCore20.runtimeconfig.dev.json
+C:\Users\vpash\source\repos\WorkApiCore20\WorkApiCore20\bin\Debug\netcoreapp2.0\WorkApiCore20.dll
+C:\Users\vpash\source\repos\WorkApiCore20\WorkApiCore20\bin\Debug\netcoreapp2.0\WorkApiCore20.pdb
+C:\Users\vpash\source\repos\WorkApiCore20\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.csprojAssemblyReference.cache
+C:\Users\vpash\source\repos\WorkApiCore20\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.csproj.CoreCompileInputs.cache
+C:\Users\vpash\source\repos\WorkApiCore20\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.AssemblyInfoInputs.cache
+C:\Users\vpash\source\repos\WorkApiCore20\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.AssemblyInfo.cs
+C:\Users\vpash\source\repos\WorkApiCore20\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.dll
+C:\Users\vpash\source\repos\WorkApiCore20\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.pdb
