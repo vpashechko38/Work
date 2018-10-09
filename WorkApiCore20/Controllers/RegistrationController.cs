@@ -165,21 +165,21 @@ namespace WorkApiCore20.Controllers
                 PartnerModel client = db.Partners.FirstOrDefault(x => x.Email == user.Email);
                 if (client == null)
                 {
-                    return Ok(new { success = false, message = user });
+                    return Ok("Пользователь не найден");
                 }
                 if (Crypt.GeneratePassword(user.Email, user.Password) != client.Password)
                 {
                     return Ok("Логин или пароль введены не правильно");
                 }
-                if (client.Success==false)
-                {
-                    return Ok("Ваша учетная запись не подтверждена");
-                }
+                //if (client.Success==false)
+                //{
+                //    return Ok("Ваша учетная запись не подтверждена");
+                //}
                 LicenseModel license = db.Licenses.FirstOrDefault(x => x.UserId == client.Id);
-                if (license.LifeTime > DateTime.Today)
-                {
-                    return Ok("Ваша лицензия истекла");
-                } 
+                //if (license.LifeTime > DateTime.Today)
+                //{
+                //    return Ok("Ваша лицензия истекла");
+                //} 
                 db.SaveChanges();
                 if (client.INN == null)
                 {

@@ -54,7 +54,7 @@ namespace WorkApiCore20.Controllers
             {
                 return Ok("Empty request");
             }
-            PartnerModel client = db.Partners.FirstOrDefault(x=>x.Email==partner.Email);
+            PartnerModel client = db.Partners.FirstOrDefault(x=>x.Id==partner.Id);
             string pas = partner.Password;
             client = partner;
             client.Password = pas;
