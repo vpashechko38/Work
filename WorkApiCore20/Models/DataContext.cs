@@ -9,7 +9,8 @@ namespace WorkApiCore20.Models
     public class DataContext:DbContext
     {
         public DbSet<LicenseModel> Licenses { get; set; }
-        public DbSet<PartnerModel> Users { get; set; }
+        public DbSet<PartnerModel> Partners { get; set; }
+        public DbSet<Price> Prices { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options)
             : base(options)

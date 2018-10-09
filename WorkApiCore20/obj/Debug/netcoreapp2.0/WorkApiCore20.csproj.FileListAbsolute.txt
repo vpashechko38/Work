@@ -20,3 +20,14 @@ C:\GitHub\Work\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.AssemblyInfoI
 C:\GitHub\Work\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.AssemblyInfo.cs
 C:\GitHub\Work\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.dll
 C:\GitHub\Work\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.pdb
+C:\Users\A001\Documents\GitHub\Work\WorkApiCore20\bin\Debug\netcoreapp2.0\WorkApiCore20.deps.json
+C:\Users\A001\Documents\GitHub\Work\WorkApiCore20\bin\Debug\netcoreapp2.0\WorkApiCore20.runtimeconfig.json
+C:\Users\A001\Documents\GitHub\Work\WorkApiCore20\bin\Debug\netcoreapp2.0\WorkApiCore20.runtimeconfig.dev.json
+C:\Users\A001\Documents\GitHub\Work\WorkApiCore20\bin\Debug\netcoreapp2.0\WorkApiCore20.dll
+C:\Users\A001\Documents\GitHub\Work\WorkApiCore20\bin\Debug\netcoreapp2.0\WorkApiCore20.pdb
+C:\Users\A001\Documents\GitHub\Work\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.csprojAssemblyReference.cache
+C:\Users\A001\Documents\GitHub\Work\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.csproj.CoreCompileInputs.cache
+C:\Users\A001\Documents\GitHub\Work\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.AssemblyInfoInputs.cache
+C:\Users\A001\Documents\GitHub\Work\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.AssemblyInfo.cs
+C:\Users\A001\Documents\GitHub\Work\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.dll
+C:\Users\A001\Documents\GitHub\Work\WorkApiCore20\obj\Debug\netcoreapp2.0\WorkApiCore20.pdb

@@ -48,6 +48,24 @@ namespace WorkApiCore20.Controllers
         //        return Ok(new { success = false, message = e.Message });
         //    }
         //}
+        [HttpPost("test")]
+        public IActionResult Post()
+        {
+            PartnerModel user = db.Partners.FirstOrDefault(x => x.Id == 1);
+            return Ok(new
+            {
+                user.Id,
+                user.Fio,
+                user.TypeClient,
+                user.ActualAddress,
+                user.PhoneNumber,
+                user.Email,
+                user.SeriesAndNumberPasport,
+                user.IssuedByPasport,
+                user.DateOfIssuePasport,
+                user.UnitCodePasport
+            });
+        } 
         [HttpPost("")]
         public IActionResult Give([FromBody] PartnerModel[] userModels)
         {
@@ -60,26 +78,13 @@ namespace WorkApiCore20.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            PartnerModel user = db.Users.FirstOrDefault(x => x.Id == id);
+            PartnerModel user = db.Partners.FirstOrDefault(x => x.Id == id);
+            if (user == null)
+            {
+                return Ok(new { success = false, message = "Пользователь не найден" });
+            }
             switch (user.TypeClient)
             {
-                case (int)TypeClient.Fizicial:
-                    if (user == null)
-                    {
-                        return Ok(new { success = false, message = "Пользователь не найден" });
-                    }
-                    return Ok(new {
-                        user.Id,
-                        user.Fio,
-                        user.TypeClient,
-                        user.ActualAddress,
-                        user.PhoneNumber,
-                        user.Email,
-                        user.SeriesAndNumberPasport,
-                        user.IssuedByPasport,
-                        user.DateOfIssuePasport,
-                        user.UnitCodePasport
-                    });
                 case (int)TypeClient.Individual:
                     return Ok(new {
                         user.Id,
@@ -122,7 +127,7 @@ namespace WorkApiCore20.Controllers
         [HttpGet("confirmation/api={api}&id={id}")]
         public IActionResult Confirmation(string api, int id)
         {
-            PartnerModel user = db.Users.FirstOrDefault(x=>x.Id==id);
+            PartnerModel user = db.Partners.FirstOrDefault(x=>x.Id==id);
             user.Success = true;
             db.SaveChanges();
             return Ok(new { success = true });
@@ -138,9 +143,9 @@ namespace WorkApiCore20.Controllers
                 }
                 string password = user.Password;
                 user.Password = Crypt.GeneratePassword(user.Email, user.Password);
-                db.Users.Add(user);
+                db.Partners.Add(user);
                 db.SaveChanges();
-                SendMail.SendToken(db.Users.FirstOrDefault(x=>x.Password==user.Password).Id,user.Email, password);
+                SendMail.SendToken(db.Partners.FirstOrDefault(x=>x.Password==user.Password).Id,user.Email, password);
                 return Ok("success");
             }
             catch (Exception e)
@@ -157,10 +162,10 @@ namespace WorkApiCore20.Controllers
                 {
                     return Ok("Пустой запрос");
                 }
-                PartnerModel client = db.Users.FirstOrDefault(x => x.Email == user.Email);
+                PartnerModel client = db.Partners.FirstOrDefault(x => x.Email == user.Email);
                 if (client == null)
                 {
-                    return Ok("Пользователь не найден");
+                    return Ok(new { success = false, message = user });
                 }
                 if (Crypt.GeneratePassword(user.Email, user.Password) != client.Password)
                 {
@@ -178,15 +183,17 @@ namespace WorkApiCore20.Controllers
                 db.SaveChanges();
                 if (client.INN == null)
                 {
-                    return Ok(client.Id);
+                    return Ok(new { UserId = client.Id });
                 }
                 switch (client.TypeClient)
                 {
                     case (int)TypeClient.Individual:
                         return Ok(new
                         {
+
+                            Success = "success",
                             client.Id,
-                            client.TypeClient,
+                             client.TypeClient,
                             client.INN,
                             client.OGRNIP,
                             client.LegalAddress,
@@ -222,7 +229,7 @@ namespace WorkApiCore20.Controllers
                         });
 
                     default:
-                        return Ok("");
+                        return Ok(new { success = true, message = user.Id });
                 }
             }
             catch (Exception e)

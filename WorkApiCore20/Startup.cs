@@ -26,7 +26,7 @@ namespace WorkApiCore20
         public void ConfigureServices(IServiceCollection services)
         {
             //var connection = $"server=94.250.254.161;database=memorial;uid=m3ddev;password=0C5l0L5j";
-            var connection = $"Server=localhost;User Id=postgres;Port=5432;Database=TestSS";
+            var connection = $"Server=localhost;User Id=postgres;Port=5432;Database=TestDB";
             services.AddDbContext<DataContext>(opt => opt.UseNpgsql(connection));
             services.AddMvc();
         }

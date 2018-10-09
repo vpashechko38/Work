@@ -8,7 +8,6 @@ namespace WorkApiCore20.enumerators
     enum TypeClient
     {
         Individual = 0,
-        Fizicial = 1,
-        UristFace = 2
+        UristFace = 1 
     }
 }
