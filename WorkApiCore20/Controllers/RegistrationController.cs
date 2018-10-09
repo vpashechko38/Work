@@ -183,54 +183,54 @@ namespace WorkApiCore20.Controllers
                 db.SaveChanges();
                 if (client.INN == null)
                 {
-                    return Ok(new { UserId = client.Id });
+                    return Ok("goaddinfoorgan");
                 }
-                switch (client.TypeClient)
-                {
-                    case (int)TypeClient.Individual:
-                        return Ok(new
-                        {
+                return Ok("goaddorders");
+                //switch (client.TypeClient)
+                //{
+                //    case (int)TypeClient.Individual:
+                //        return Ok(new
+                //        {
+                //            Success = "success",
+                //            client.Id,
+                //            client.TypeClient,
+                //            client.INN,
+                //            client.OGRNIP,
+                //            client.LegalAddress,
+                //            client.ActualAddress,
+                //            client.PhoneNumber,
+                //            client.CheckingAccount,
+                //            client.BankName,
+                //            client.BIK,
+                //            client.CorrespondentAccount,
+                //            client.Fio,
+                //            client.SeriesAndNumberCertificate,
+                //            client.DateOfIssueCertificate
+                //        });
+                //    case (int)TypeClient.UristFace:
+                //        return Ok(new
+                //        {
+                //            client.Id,
+                //            client.TypeClient,
+                //            client.INN,
+                //            client.OGRN,
+                //            client.KPP,
+                //            client.LegalAddress,
+                //            client.ActualAddress,
+                //            client.PhoneNumber,
+                //            client.Email,
+                //            client.CheckingAccount,
+                //            client.BankName,
+                //            client.BIK,
+                //            client.CorrespondentAccount,
+                //            client.Fio,
+                //            client.Position,
+                //            client.ActingBasis
+                //        });
 
-                            Success = "success",
-                            client.Id,
-                             client.TypeClient,
-                            client.INN,
-                            client.OGRNIP,
-                            client.LegalAddress,
-                            client.ActualAddress,
-                            client.PhoneNumber,
-                            client.CheckingAccount,
-                            client.BankName,
-                            client.BIK,
-                            client.CorrespondentAccount,
-                            client.Fio,
-                            client.SeriesAndNumberCertificate,
-                            client.DateOfIssueCertificate
-                        });
-                    case (int)TypeClient.UristFace:
-                        return Ok(new
-                        {
-                            client.Id,
-                            client.TypeClient,
-                            client.INN,
-                            client.OGRN,
-                            client.KPP,
-                            client.LegalAddress,
-                            client.ActualAddress,
-                            client.PhoneNumber,
-                            client.Email,
-                            client.CheckingAccount,
-                            client.BankName,
-                            client.BIK,
-                            client.CorrespondentAccount,
-                            client.Fio,
-                            client.Position,
-                            client.ActingBasis
-                        });
-
-                    default:
-                        return Ok(new { success = true, message = user.Id });
-                }
+                //    default:
+                //        return Ok(new { success = true, message = user.Id });
+                //}
             }
             catch (Exception e)
             {
