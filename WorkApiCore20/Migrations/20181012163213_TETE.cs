@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace WorkApiCore20.Migrations
 {
-    public partial class TestTest : Migration
+    public partial class TETE : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -37,7 +37,7 @@ namespace WorkApiCore20.Migrations
                     CheckingAccount = table.Column<string>(nullable: true),
                     CorrespondentAccount = table.Column<string>(nullable: true),
                     DateOfIssueCertificate = table.Column<string>(nullable: true),
-                    DateOfIssuePasport = table.Column<DateTime>(nullable: false),
+                    DateOfIssuePassport = table.Column<DateTime>(nullable: false),
                     Email = table.Column<string>(nullable: true),
                     Fio = table.Column<string>(nullable: true),
                     INN = table.Column<string>(nullable: true),
@@ -51,7 +51,7 @@ namespace WorkApiCore20.Migrations
                     PhoneNumber = table.Column<string>(nullable: true),
                     Position = table.Column<string>(nullable: true),
                     SeriesAndNumberCertificate = table.Column<string>(nullable: true),
-                    SeriesAndNumberPasport = table.Column<string>(nullable: true),
+                    SeriesAndNumberPassport = table.Column<string>(nullable: true),
                     Success = table.Column<bool>(nullable: false),
                     TypeClient = table.Column<int>(nullable: false),
                     UnitCodePasport = table.Column<string>(nullable: true)
@@ -68,11 +68,24 @@ namespace WorkApiCore20.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     NamePosition = table.Column<string>(nullable: true),
-                    PricePosition = table.Column<string>(nullable: true)
+                    PricePosition = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Prices", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Versions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ActualVersion = table.Column<double>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Versions", x => x.Id);
                 });
         }
 
@@ -86,6 +99,9 @@ namespace WorkApiCore20.Migrations
 
             migrationBuilder.DropTable(
                 name: "Prices");
+
+            migrationBuilder.DropTable(
+                name: "Versions");
         }
     }
 }

@@ -60,9 +60,9 @@ namespace WorkApiCore20.Controllers
                 user.ActualAddress,
                 user.PhoneNumber,
                 user.Email,
-                user.SeriesAndNumberPasport,
+                user.SeriesAndNumberPassport,
                 user.IssuedByPasport,
-                user.DateOfIssuePasport,
+                user.DateOfIssuePassport,
                 user.UnitCodePasport
             });
         } 
@@ -182,16 +182,16 @@ namespace WorkApiCore20.Controllers
                 {
                     return Ok("Логин или пароль введены не правильно");
                 }
-                if (client.Success == false)
-                {
-                    return Ok("Ваша учетная запись не подтверждена");
-                }
-                LicenseModel license = db.Licenses.FirstOrDefault(x => x.UserId == client.Id);
-                if (license.LifeTime > DateTime.Today)
-                {
-                    return Ok("Ваша лицензия истекла");
-                }
-                db.SaveChanges();
+                //if (client.Success == false)
+                //{
+                //    return Ok("Ваша учетная запись не подтверждена");
+                //}
+                //LicenseModel license = db.Licenses.FirstOrDefault(x => x.UserId == client.Id);
+                //if (license.LifeTime > DateTime.Today)
+                //{
+                //    return Ok("Ваша лицензия истекла");
+                ////}
+                //db.SaveChanges();
                 if (client.INN == null)
                 {
                     return Ok("goaddinfoorgan");

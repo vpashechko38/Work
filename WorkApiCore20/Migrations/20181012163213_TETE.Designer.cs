@@ -11,8 +11,8 @@ using WorkApiCore20.Models;
 namespace WorkApiCore20.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20181011181135_test")]
-    partial class test
+    [Migration("20181012163213_TETE")]
+    partial class TETE
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -56,7 +56,7 @@ namespace WorkApiCore20.Migrations
 
                     b.Property<string>("DateOfIssueCertificate");
 
-                    b.Property<DateTime>("DateOfIssuePasport");
+                    b.Property<DateTime>("DateOfIssuePassport");
 
                     b.Property<string>("Email");
 
@@ -84,7 +84,7 @@ namespace WorkApiCore20.Migrations
 
                     b.Property<string>("SeriesAndNumberCertificate");
 
-                    b.Property<string>("SeriesAndNumberPasport");
+                    b.Property<string>("SeriesAndNumberPassport");
 
                     b.Property<bool>("Success");
 
@@ -104,11 +104,23 @@ namespace WorkApiCore20.Migrations
 
                     b.Property<string>("NamePosition");
 
-                    b.Property<string>("PricePosition");
+                    b.Property<double>("PricePosition");
 
                     b.HasKey("Id");
 
                     b.ToTable("Prices");
+                });
+
+            modelBuilder.Entity("WorkApiCore20.Models.VersionApp", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<double>("ActualVersion");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Versions");
                 });
 #pragma warning restore 612, 618
         }

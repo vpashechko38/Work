@@ -40,7 +40,7 @@ namespace WorkApiCore20.Models
         /// <summary>
         /// Серия и номер паспорта
         /// </summary>
-        public string SeriesAndNumberPasport { get; set; }
+        public string SeriesAndNumberPassport { get; set; }
         /// <summary>
         /// Кем выдан паспорт
         /// </summary>
@@ -48,7 +48,7 @@ namespace WorkApiCore20.Models
         /// <summary>
         /// Дата выдачи паспорта
         /// </summary>
-        public DateTime DateOfIssuePasport { get; set; }
+        public DateTime DateOfIssuePassport { get; set; }
         /// <summary>
         /// Код подразделения выдавшего паспорт
         /// </summary>
