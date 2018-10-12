@@ -59,7 +59,7 @@ namespace WorkApiCore20.Controllers
             client = partner;
             client.Password = pas;
             db.SaveChanges();
-            return Ok();
+            return Ok("success");
         }
     }
 }

@@ -27,7 +27,7 @@ namespace WorkApiCore20
         {
             //var connection = $"Server=localhost;User Id=postgres;Port=5432;Database=TestDB";
             //services.AddDbContext<DataContext>(opt => opt.UseNpgsql(connection));
-            var connection = $"Server=(localdb)\\mssqllocaldb;Database=sdbd;Trusted_Connection=True;";
+            var connection = $"Server=(localdb)\\mssqllocaldb;Database=sasa;Trusted_Connection=True;";
             //var connection = $"server=94.250.254.161;database=memorial;user=m3ddev;password=0C5I0L5j;persistsecurityinfo=True;SslMode=none";
             services.AddDbContext<DataContext>(opt => opt.UseSqlServer(connection));
             services.AddMvc();
