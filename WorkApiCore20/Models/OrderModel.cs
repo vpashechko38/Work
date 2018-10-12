@@ -28,5 +28,6 @@ namespace WorkApiCore20.Models
         /// Сумма заказа
         /// </summary>
         public double SumOrder { get; set; }
+
     }
 }
