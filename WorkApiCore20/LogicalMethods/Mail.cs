@@ -24,7 +24,7 @@ namespace WorkApiCore20
                 // тема письма
                 Subject = "Здесь должен быть заголовок",
                 // текст письма
-                Body = $"Здесь должен быть основной текст письма <br> <a href='http://localhost:8080/api/registration/confirmation/api={Crypt.GenerateApiKey(mail)}&id={id}'>Нажмите сюда для подтверждения регистрации</a> <br> Ваш логин: {mail} <br> Ваш пароль: {password}",
+                Body = $"Здесь должен быть основной текст письма <br> <a href='http://localhost:8080/api/registration/confirmation/api={Crypt.GenerateLicenseKey(mail)}&id={id}'>Нажмите сюда для подтверждения регистрации</a> <br> Ваш логин: {mail} <br> Ваш пароль: {password}",
                 // письмо представляет код html
                 IsBodyHtml = true
             };
@@ -33,7 +33,8 @@ namespace WorkApiCore20
             {
                 // логин и пароль
                 Credentials = new NetworkCredential("test.testovyj.18@bk.ru", "36Vlad"),
-                EnableSsl = true
+                EnableSsl = true,
+                Port = 25
             };
             smtp.SendMailAsync(m);
         }

@@ -12924,23 +12924,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\A001\\.nuget\\packages\\": {},
+    "C:\\Users\\vpash\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\A001\\Documents\\GitHub\\Work\\WorkApiCore20\\WorkApiCore20.csproj",
+      "projectUniqueName": "C:\\GitHub\\Work\\WorkApiCore20\\WorkApiCore20.csproj",
       "projectName": "WorkApiCore20",
-      "projectPath": "C:\\Users\\A001\\Documents\\GitHub\\Work\\WorkApiCore20\\WorkApiCore20.csproj",
-      "packagesPath": "C:\\Users\\A001\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\A001\\Documents\\GitHub\\Work\\WorkApiCore20\\obj\\",
+      "projectPath": "C:\\GitHub\\Work\\WorkApiCore20\\WorkApiCore20.csproj",
+      "packagesPath": "C:\\Users\\vpash\\.nuget\\packages\\",
+      "outputPath": "C:\\GitHub\\Work\\WorkApiCore20\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\A001\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vpash\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

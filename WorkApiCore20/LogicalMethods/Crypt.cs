@@ -9,12 +9,13 @@ namespace WorkApiCore20
 {
     public class Crypt
     {
-        public static string GenerateApiKey(string login)
+        public static string GenerateLicenseKey(string login)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
             string data = Convert.ToString(DateTime.Now);
             byte[] byteMas = md5.ComputeHash(Encoding.UTF8.GetBytes(login + data));
             string Apikey = BitConverter.ToString(byteMas).Replace("-", String.Empty);
+
             return Apikey;
         }
         public static string GeneratePassword(string login, string password)

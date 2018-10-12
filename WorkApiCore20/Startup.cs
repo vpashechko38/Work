@@ -25,10 +25,11 @@ namespace WorkApiCore20
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connection = $"Server=(localdb)\\mssqllocaldb;Database=sdb;Trusted_Connection=True;";
-            //var connection = $"server=94.250.254.161;database=memorial;uid=m3ddev;password=0C5l0L5j";
             //var connection = $"Server=localhost;User Id=postgres;Port=5432;Database=TestDB";
-            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(connection));
+            //services.AddDbContext<DataContext>(opt => opt.UseNpgsql(connection));
+            //var connection = $"Server=(localdb)\\mssqllocaldb;Database=sdb;Trusted_Connection=True;";
+            var connection = $"server=localhost;database=library;user=root;password=;persistsecurityinfo=True;SslMode=none";
+            services.AddDbContext<DataContext>(opt => opt.UseMySQL(connection));
             services.AddMvc();
         }
 

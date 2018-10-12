@@ -129,6 +129,13 @@ namespace WorkApiCore20.Controllers
         {
             PartnerModel user = db.Partners.FirstOrDefault(x=>x.Id==id);
             user.Success = true;
+            LicenseModel license = new LicenseModel()
+            {
+                UserId = user.Id,
+                KeyLicense = Crypt.GenerateLicenseKey(user.Email),
+                LifeTime = DateTime.Today
+            };
+            db.Licenses.Add(license);
             db.SaveChanges();
             return Ok(new { success = true });
         }
@@ -140,6 +147,10 @@ namespace WorkApiCore20.Controllers
                 if (user == null)
                 {
                     return Ok(new { success = false, message = "Пустой запрос" });
+                }
+                if (db.Partners.FirstOrDefault(x => x.Email == user.Email) != null)
+                {
+                    return Ok(new { success = false, message = "Данная почта уже занята" });
                 }
                 string password = user.Password;
                 user.Password = Crypt.GeneratePassword(user.Email, user.Password);
@@ -171,15 +182,15 @@ namespace WorkApiCore20.Controllers
                 {
                     return Ok("Логин или пароль введены не правильно");
                 }
-                //if (client.Success==false)
-                //{
-                //    return Ok("Ваша учетная запись не подтверждена");
-                //}
+                if (client.Success == false)
+                {
+                    return Ok("Ваша учетная запись не подтверждена");
+                }
                 LicenseModel license = db.Licenses.FirstOrDefault(x => x.UserId == client.Id);
-                //if (license.LifeTime > DateTime.Today)
-                //{
-                //    return Ok("Ваша лицензия истекла");
-                //} 
+                if (license.LifeTime > DateTime.Today)
+                {
+                    return Ok("Ваша лицензия истекла");
+                }
                 db.SaveChanges();
                 if (client.INN == null)
                 {
